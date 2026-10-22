@@ -1,0 +1,23 @@
+{
+	"schemaVersion": 1,
+	"id": "elevators",
+	"version": "${version}",
+	"name": "Elevators",
+	"description": "Simple vertical elevators with safe teleporting and Enderman and Shulker sounds.",
+	"authors": [
+		"Elevators Fabric contributors"
+	],
+	"license": "CC0-1.0",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"it.elevators.ElevatorsMod"
+		]
+	},
+	"depends": {
+		"fabricloader": ">=0.19.5",
+		"minecraft": "~26.3",
+		"java": ">=25",
+		"fabric-api": "*"
+	}
+}
