@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    "minecraft:green_wool",
+    "minecraft:ender_pearl",
+    "minecraft:redstone"
+  ],
+  "result": {
+    "id": "elevators:green_wool_elevator",
+    "count": 1
+  }
+}

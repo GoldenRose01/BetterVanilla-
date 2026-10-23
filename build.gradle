@@ -16,12 +16,9 @@ repositories {
 }
 
 loom {
-	splitEnvironmentSourceSets()
-
 	mods {
 		"elevators" {
 			sourceSet sourceSets.main
-			sourceSet sourceSets.client
 		}
 	}
 }

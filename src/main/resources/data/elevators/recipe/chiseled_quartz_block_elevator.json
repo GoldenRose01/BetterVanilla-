@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    "minecraft:chiseled_quartz_block",
+    "minecraft:ender_pearl",
+    "minecraft:redstone"
+  ],
+  "result": {
+    "id": "elevators:chiseled_quartz_block_elevator",
+    "count": 1
+  }
+}

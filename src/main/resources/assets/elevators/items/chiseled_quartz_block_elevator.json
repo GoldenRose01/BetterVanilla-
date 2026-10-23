@@ -1,0 +1,6 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "elevators:item/chiseled_quartz_block_elevator"
+  }
+}

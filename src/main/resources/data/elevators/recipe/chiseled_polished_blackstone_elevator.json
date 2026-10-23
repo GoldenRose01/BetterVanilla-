@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    "minecraft:chiseled_polished_blackstone",
+    "minecraft:ender_pearl",
+    "minecraft:redstone"
+  ],
+  "result": {
+    "id": "elevators:chiseled_polished_blackstone_elevator",
+    "count": 1
+  }
+}

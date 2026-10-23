@@ -3,7 +3,7 @@
 	"id": "elevators",
 	"version": "${version}",
 	"name": "Elevators",
-	"description": "Simple vertical elevators with safe teleporting and Enderman and Shulker sounds.",
+	"description": "Craftable vanilla-textured elevator variants, a dedicated creative tab, safe teleporting, and Enderman and Shulker sounds.",
 	"authors": [
 		"Elevators Fabric contributors"
 	],

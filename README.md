@@ -1,21 +1,24 @@
 # Elevators Fabric 26.3
 
-Mod Fabric per Minecraft Java 26.3. Adds one craftable elevator block and links it to other elevator blocks directly above or below it on the same X/Z coordinates.
+A Fabric mod for Minecraft Java 26.3. It adds elevator blocks based on the existing vanilla wool colors and the selected chiseled blocks. Each elevator uses the matching vanilla block texture and can connect vertically to any elevator variant.
+
+The **Elevators** creative tab contains all elevator variants and uses the Copper Elevator as its icon.
 
 ## Use
 
-- Right-click an elevator block to travel to the nearest elevator above.
-- Sneak and right-click to travel to the nearest elevator below.
-- The destination must have two clear blocks above it. Teleports are limited to 128 blocks per activation.
+- Right-click an elevator to travel to the nearest elevator above it.
+- Sneak and right-click to travel to the nearest elevator below it.
+- Elevators must share the same X/Z coordinates and be within 128 blocks.
+- The destination needs two clear blocks above it.
 - A successful teleport plays both the Enderman and Shulker teleport sounds.
-- No item frame, Shulker block, or other marker block is used.
+- No item frame or marker block is required.
 
-Elevators use the vanilla quartz block texture so the project remains self-contained and avoids bundling copied game assets. Craft 4 elevators with 7 quartz blocks, 1 ender pearl, and 1 redstone using the included recipe.
+## Recipes
 
-## Build
+Each variant has its own shapeless recipe: one matching vanilla base block, one Ender Pearl, and one Redstone produce one matching elevator. For example, White Wool + Ender Pearl + Redstone produces one White Wool Elevator.
 
-Requires JDK 25. On Windows, run `gradlew.bat build`; the distributable mod jar is written to `build/libs/`.
+## Build and run
 
-## Notes
+Requires JDK 25. On Windows, run `gradlew.bat build` to build the project or `gradlew.bat runClient` to start a development client. The distributable mod jar is written to `build/libs/`.
 
-The referenced prior project archive and texture attachment were not available in the recovered conversation. This reconstruction uses the stated requirements and a vanilla quartz texture as a practical default. Replace the model texture reference in `src/main/resources/assets/elevators/models/block/elevator.json` if the original texture becomes available.
+The block models reference vanilla Minecraft textures; no copied game texture files are bundled.

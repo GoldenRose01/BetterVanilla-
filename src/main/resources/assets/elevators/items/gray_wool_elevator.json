@@ -1,0 +1,6 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "elevators:item/gray_wool_elevator"
+  }
+}
