@@ -98,7 +98,8 @@ public final class ElevatorsMod implements ModInitializer {
         Identifier id = Identifier.fromNamespaceAndPath(MOD_ID, name);
         ResourceKey<Block> blockKey = ResourceKey.create(Registries.BLOCK, id);
         Block block = new ElevatorBlock(BlockBehaviour.Properties.ofFullCopy(variant.baseBlock())
-                .setId(blockKey));
+                .setId(blockKey)
+                .isValidSpawn((state, level, pos, entityType) -> false));
         Registry.register(BuiltInRegistries.BLOCK, blockKey, block);
 
         ResourceKey<Item> itemKey = ResourceKey.create(Registries.ITEM, id);
@@ -171,13 +172,17 @@ public final class ElevatorsMod implements ModInitializer {
             int y = source.getY() + direction * distance;
             if (y < minY || y > maxY) break;
             BlockPos candidate = new BlockPos(source.getX(), y, source.getZ());
-            if (isElevator(level.getBlockState(candidate).getBlock())) return candidate;
+            if (isElevatorBlock(level.getBlockState(candidate).getBlock())) return candidate;
         }
         return null;
     }
 
-    private static boolean isElevator(Block block) {
+    public static boolean isElevatorBlock(Block block) {
         return ELEVATOR_BLOCK_SET.contains(block);
+    }
+
+    public static boolean isElevatorAt(Level level, BlockPos pos) {
+        return isElevatorBlock(level.getBlockState(pos).getBlock());
     }
 
     private record Variant(String name, Block baseBlock) {}

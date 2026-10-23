@@ -3,7 +3,7 @@
 	"id": "elevators",
 	"version": "${version}",
 	"name": "Elevators",
-	"description": "Craftable vanilla-textured elevator variants, a dedicated creative tab, safe teleporting, and Enderman and Shulker sounds.",
+	"description": "Craftable vanilla-textured elevator variants with active proximity particles, safe teleporting, and Enderman and Shulker sounds.",
 	"authors": [
 		"Elevators Fabric contributors"
 	],
@@ -12,8 +12,14 @@
 	"entrypoints": {
 		"main": [
 			"it.elevators.ElevatorsMod"
+		],
+		"client": [
+			"it.elevators.ElevatorsClient"
 		]
 	},
+	"mixins": [
+		"elevators.mixins.json"
+	],
 	"depends": {
 		"fabricloader": ">=0.19.5",
 		"minecraft": "~26.3",

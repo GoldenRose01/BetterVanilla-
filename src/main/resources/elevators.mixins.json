@@ -1,0 +1,11 @@
+{
+  "required": true,
+  "package": "it.elevators.mixin",
+  "compatibilityLevel": "JAVA_25",
+  "mixins": [
+    "NaturalSpawnerMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
