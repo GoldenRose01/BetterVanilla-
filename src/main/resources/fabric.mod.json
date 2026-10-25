@@ -3,7 +3,7 @@
 	"id": "elevators",
 	"version": "${version}",
 	"name": "Elevators",
-	"description": "Craftable vanilla-textured elevator variants with active proximity particles, safe teleporting, and Enderman and Shulker sounds.",
+	"description": "Adds vanilla-textured elevator variants, active proximity particles, safe teleporting, and a golden-apple bonus for fully powered regeneration beacons.",
 	"authors": [
 		"Elevators Fabric contributors"
 	],

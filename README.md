@@ -11,7 +11,12 @@ The **Elevators** creative tab contains all elevator variants and uses the Coppe
 - Elevators must share the same X/Z coordinates and be within 128 blocks.
 - The destination needs two clear blocks above it.
 - A successful teleport plays both the Enderman and Shulker teleport sounds.
+- Elevators emit matching block particles while a player is within 15 blocks.
 - No item frame or marker block is required.
+
+## Beacon bonus
+
+Drop a Golden Apple directly on top of a fully built level 4 beacon with Regeneration selected as either its primary or secondary power. The beacon consumes one apple and grants Saturation V to players within 50 blocks.
 
 ## Recipes
 
