@@ -5,7 +5,9 @@
   "mixins": [
     "NaturalSpawnerMixin",
     "BeaconBlockEntityAccessor",
-    "ItemEntityMixin"
+    "ItemEntityMixin",
+    "PlayerKeepInventoryMixin",
+    "ServerPlayerKeepInventoryMixin"
   ],
   "injectors": {
     "defaultRequire": 1

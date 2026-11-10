@@ -1,6 +1,6 @@
 {
-  "parent": "minecraft:block/cube_all",
+  "parent": "elevators:block/cube_all",
   "textures": {
-    "all": "minecraft:block/purple_wool"
+    "all": "elevators:block/purple_wool"
   }
 }

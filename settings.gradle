@@ -10,4 +10,4 @@ pluginManagement {
 }
 
 // Should match your modid
-rootProject.name = 'Elevators-Fabric-26.3'
+rootProject.name = 'BetterVanilla+-Fabric-26.3'

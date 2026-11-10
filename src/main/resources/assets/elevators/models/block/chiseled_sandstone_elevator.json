@@ -1,6 +1,6 @@
 {
-  "parent": "minecraft:block/cube_all",
+  "parent": "elevators:block/cube_all",
   "textures": {
-    "all": "minecraft:block/chiseled_sandstone"
+    "all": "elevators:block/chiseled_sandstone"
   }
 }
