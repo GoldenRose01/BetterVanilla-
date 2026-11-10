@@ -26,10 +26,12 @@ abstract class NaturalSpawnerMixin {
             double distance,
             CallbackInfoReturnable<Boolean> cir
     ) {
-        for (int dx = -2; dx <= 2; dx++) {
-            for (int dy = -2; dy <= 2; dy++) {
-                for (int dz = -2; dz <= 2; dz++) {
-                    if (dx * dx + dy * dy + dz * dz > 4) continue;
+        int radius = it.elevators.BetterVanillaConfig.number("spawnProtectionRadius", 0, 8);
+        if (radius == 0) return;
+        for (int dx = -radius; dx <= radius; dx++) {
+            for (int dy = -radius; dy <= radius; dy++) {
+                for (int dz = -radius; dz <= radius; dz++) {
+                    if (dx * dx + dy * dy + dz * dz > radius * radius) continue;
                     BlockPos nearby = new BlockPos(
                             spawnPos.getX() + dx,
                             spawnPos.getY() + dy,

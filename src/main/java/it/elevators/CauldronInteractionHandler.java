@@ -28,7 +28,7 @@ public final class CauldronInteractionHandler {
     }
 
     public static void tryConvert(ItemEntity itemEntity) {
-        if (itemEntity.level().isClientSide()) return;
+        if (itemEntity.level().isClientSide() || !BetterVanillaConfig.enabled("cauldronEnabled")) return;
 
         ItemStack stack = itemEntity.getItem();
         Item convertedItem = CONVERSIONS.get(stack.getItem());

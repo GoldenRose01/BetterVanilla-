@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="320" viewBox="0 0 1280 320">
+  <defs><linearGradient id="bg"><stop stop-color="#111b22"/><stop offset="1" stop-color="#1c342f"/></linearGradient></defs>
+  <rect width="1280" height="320" rx="20" fill="url(#bg)"/>
+  <path d="M0 318H1280" stroke="#7ed6a2" stroke-width="6"/>
+  <g stroke="#7ed6a2" fill="none" opacity=".22">
+    <path d="M1050 35h150v250h-150zM1072 57h106v206h-106z" stroke-width="3"/>
+    <path d="M1090 224h70M1090 184h70M1090 144h70M1090 104h70" stroke-width="5"/>
+    <path d="M1125 260V80" stroke-width="3" stroke-dasharray="7 10"/>
+  </g>
+  <g fill="#7ed6a2"><rect x="1114" y="206" width="22" height="28"/><rect x="1106" y="213" width="38" height="14"/><circle cx="1125" cy="179" r="4"/><circle cx="1125" cy="161" r="3"/><circle cx="1125" cy="146" r="2"/></g>
+  <g font-family="Segoe UI,Arial,sans-serif">
+    <text x="58" y="65" font-size="17" letter-spacing="4" fill="#7ed6a2">PICCOLE IDEE, MONDO VANILLA</text>
+    <text x="54" y="155" font-size="64" font-weight="700" fill="#f2f5f1">BetterVanilla+</text>
+    <text x="58" y="207" font-size="23" fill="#c4d4cb">Ascensori · Calderoni · Beacon · Comandi</text>
+    <rect x="58" y="247" width="276" height="29" rx="6" fill="#ffffff" opacity=".08"/>
+    <text x="72" y="267" font-size="13" letter-spacing="2" fill="#e2eee7">MINECRAFT 26.3 · FABRIC</text>
+  </g>
+</svg>

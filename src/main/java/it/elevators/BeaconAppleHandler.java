@@ -16,15 +16,12 @@ import java.util.Map;
 import java.util.WeakHashMap;
 
 public final class BeaconAppleHandler {
-    private static final int MAX_BEACON_LEVEL = 4;
-    private static final int APPLE_COOLDOWN_TICKS = 20;
-    private static final int SATURATION_AMPLIFIER = 4;
-    private static final int BEACON_RANGE = 50;
     private static final Map<ItemEntity, Long> NEXT_USE_TICK = new WeakHashMap<>();
 
     private BeaconAppleHandler() {}
 
     public static void tryActivate(ItemEntity item) {
+        if (!BetterVanillaConfig.enabled("beaconEnabled")) return;
         if (!(item.level() instanceof ServerLevel level)) return;
 
         ItemStack stack = item.getItem();
@@ -47,13 +44,13 @@ public final class BeaconAppleHandler {
         }
 
         BeaconBlockEntityAccessor access = (BeaconBlockEntityAccessor) beacon;
-        if (access.elevators$getLevels() < MAX_BEACON_LEVEL) return;
+        if (access.elevators$getLevels() < BetterVanillaConfig.number("beaconRequiredLevel", 1, 4)) return;
         if (!isRegeneration(access.elevators$getPrimaryPower())
                 && !isRegeneration(access.elevators$getSecondaryPower())) {
             return;
         }
 
-        NEXT_USE_TICK.put(item, gameTime + APPLE_COOLDOWN_TICKS);
+        NEXT_USE_TICK.put(item, gameTime + BetterVanillaConfig.number("beaconCooldownTicks", 1, 72000));
         stack.shrink(1);
         if (stack.isEmpty()) {
             item.discard();
@@ -64,10 +61,10 @@ public final class BeaconAppleHandler {
         double centerX = beaconPos.getX() + 0.5;
         double centerY = beaconPos.getY() + 0.5;
         double centerZ = beaconPos.getZ() + 0.5;
-        double rangeSquared = (double) BEACON_RANGE * BEACON_RANGE;
+        double rangeSquared = (double) BetterVanillaConfig.number("beaconRange", 1, 512) * BetterVanillaConfig.number("beaconRange", 1, 512);
         for (ServerPlayer player : level.players()) {
             if (player.distanceToSqr(centerX, centerY, centerZ) <= rangeSquared) {
-                player.addEffect(new MobEffectInstance(MobEffects.SATURATION, 1, SATURATION_AMPLIFIER));
+                player.addEffect(new MobEffectInstance(MobEffects.SATURATION, 1, BetterVanillaConfig.number("saturationAmplifier", 0, 255)));
             }
         }
     }

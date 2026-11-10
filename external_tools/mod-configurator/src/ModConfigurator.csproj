@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <AssemblyName>ModConfigurator</AssemblyName>
+  </PropertyGroup>
+  <ItemGroup><EmbeddedResource Include="../templates/**/*"><LogicalName>templates/%(RecursiveDir)%(Filename)%(Extension)</LogicalName></EmbeddedResource></ItemGroup>
+</Project>

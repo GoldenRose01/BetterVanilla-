@@ -12,10 +12,6 @@ import net.minecraft.world.level.block.state.BlockState;
 import java.util.concurrent.ThreadLocalRandom;
 
 public final class ElevatorsClient implements ClientModInitializer {
-    private static final int ACTIVE_RADIUS = 15;
-    private static final int SCAN_INTERVAL_TICKS = 10;
-    private static final int PARTICLES_PER_ELEVATOR = 4;
-    private static final int RADIUS_SQUARED = ACTIVE_RADIUS * ACTIVE_RADIUS;
 
     @Override
     public void onInitializeClient() {
@@ -23,6 +19,10 @@ public final class ElevatorsClient implements ClientModInitializer {
     }
 
     private static void updateActiveElevatorEffects(Minecraft client) {
+        int ACTIVE_RADIUS = BetterVanillaConfig.number("particleRadius", 0, 32);
+        int SCAN_INTERVAL_TICKS = BetterVanillaConfig.number("particleIntervalTicks", 1, 1200);
+        int PARTICLES_PER_ELEVATOR = BetterVanillaConfig.number("particlesPerElevator", 0, 32);
+        int RADIUS_SQUARED = ACTIVE_RADIUS * ACTIVE_RADIUS;
         ClientLevel level = client.level;
         if (level == null || client.player == null || level.getGameTime() % SCAN_INTERVAL_TICKS != 0) return;
 

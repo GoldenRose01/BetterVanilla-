@@ -1,0 +1,14 @@
+{
+  "elevatorRange": 128,
+  "elevatorCooldownTicks": 8,
+  "particleRadius": 15,
+  "particleIntervalTicks": 10,
+  "particlesPerElevator": 4,
+  "spawnProtectionRadius": 2,
+  "beaconEnabled": true,
+  "beaconRequiredLevel": 4,
+  "beaconCooldownTicks": 20,
+  "beaconRange": 50,
+  "saturationAmplifier": 4,
+  "cauldronEnabled": true
+}

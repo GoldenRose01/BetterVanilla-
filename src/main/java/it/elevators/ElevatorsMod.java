@@ -71,7 +71,6 @@ public final class ElevatorsMod implements ModInitializer {
     private static final List<Block> ELEVATOR_BLOCKS = registerBlocks();
     private static final Set<Block> ELEVATOR_BLOCK_SET = Set.copyOf(ELEVATOR_BLOCKS);
     private static final CreativeModeTab ELEVATORS_TAB = registerCreativeTab();
-    private static final int MAX_SEARCH_DISTANCE = 128;
     private static final Map<Player, Long> LAST_USE = new WeakHashMap<>();
 
     private static List<Block> registerBlocks() {
@@ -111,6 +110,7 @@ public final class ElevatorsMod implements ModInitializer {
 
     @Override
     public void onInitialize() {
+        BetterVanillaConfig.load();
         LOGGER.info("Elevators Fabric initialized with {} elevator variants", ELEVATOR_BLOCKS.size());
         GameSetCommands.register();
     }
@@ -121,7 +121,7 @@ public final class ElevatorsMod implements ModInitializer {
 
         long now = level.getGameTime();
         Long previous = LAST_USE.get(serverPlayer);
-        if (previous != null && now - previous < 8) return InteractionResult.CONSUME;
+        if (previous != null && now - previous < BetterVanillaConfig.number("elevatorCooldownTicks", 0, 1200)) return InteractionResult.CONSUME;
         LAST_USE.put(serverPlayer, now);
 
         int direction = player.isShiftKeyDown() ? -1 : 1;
@@ -170,7 +170,7 @@ public final class ElevatorsMod implements ModInitializer {
     private static BlockPos findDestination(Level level, BlockPos source, int direction) {
         int minY = level.getMinY();
         int maxY = level.getMaxY() - 2;
-        for (int distance = 1; distance <= MAX_SEARCH_DISTANCE; distance++) {
+        for (int distance = 1; distance <= BetterVanillaConfig.number("elevatorRange", 1, 4096); distance++) {
             int y = source.getY() + direction * distance;
             if (y < minY || y > maxY) break;
             BlockPos candidate = new BlockPos(source.getX(), y, source.getZ());
