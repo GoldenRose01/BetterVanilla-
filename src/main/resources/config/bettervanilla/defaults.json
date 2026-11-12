@@ -10,5 +10,8 @@
   "beaconCooldownTicks": 20,
   "beaconRange": 50,
   "saturationAmplifier": 4,
-  "cauldronEnabled": true
+  "cauldronEnabled": true,
+  "treecut": "fell",
+  "treeMaxLogs": 256,
+  "treeMaxLeaves": 512
 }

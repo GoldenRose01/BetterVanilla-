@@ -25,6 +25,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.phys.BlockHitResult;
 import it.elevators.command.GameSetCommands;
+import it.elevators.tree.TreeFeller;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -113,6 +114,7 @@ public final class ElevatorsMod implements ModInitializer {
         BetterVanillaConfig.load();
         LOGGER.info("Elevators Fabric initialized with {} elevator variants", ELEVATOR_BLOCKS.size());
         GameSetCommands.register();
+        TreeFeller.register();
     }
 
     private static InteractionResult useElevator(Player player, Level level, BlockPos source) {

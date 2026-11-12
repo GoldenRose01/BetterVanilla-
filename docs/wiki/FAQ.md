@@ -1,5 +1,7 @@
 # Problemi frequenti
 
+Lingue: [Italiano](FAQ.md) | [English](en-FAQ.md) | [Español](es-FAQ.md) | [简体中文](zh-FAQ.md) | [हिन्दी](hi-FAQ.md) | [العربية](ar-FAQ.md) | [Português](pt-FAQ.md) | [বাংলা](bn-FAQ.md) | [Русский](ru-FAQ.md) | [اردو](ur-FAQ.md)
+
 ## Gli ascensori non si attivano
 
 Controlla che il blocco sia una variante di BetterVanilla+, che la destinazione si trovi sulla stessa coordinata X/Z e nella direzione scelta, e che sia entro 128 blocchi. Servono inoltre due blocchi liberi sopra la destinazione.
@@ -22,4 +24,4 @@ Serve un calderone d’acqua. Le conversioni supportate sono terra, terra steril
 
 ## Il JAR non si avvia
 
-Controlla che Minecraft, Fabric Loader, Fabric API e JAR corrispondano tutti alla stessa versione: 26.3 oppure 26.4 Snapshot 7. Consulta [Installazione](Installazione) e [Compatibilità](Compatibilita).
+Controlla che Minecraft, Fabric Loader, Fabric API e JAR corrispondano tutti alla stessa versione: 26.3 oppure 26.4 Snapshot 7. Consulta [Installazione](Installazione.md) e [Compatibilità](Compatibilita.md).

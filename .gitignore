@@ -39,3 +39,4 @@ replay_*.log
 *.hprof
 *.jfr
 external_tools/mod-configurator/ModConfigurator.exe
+external_tools/mod-configurator/ModConfigurator-v2.exe

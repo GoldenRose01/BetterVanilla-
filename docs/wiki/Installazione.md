@@ -1,5 +1,7 @@
 # Installazione
 
+Lingue: [Italiano](Installazione.md) | [English](en-Installation.md) | [Español](es-Installation.md) | [简体中文](zh-Installation.md) | [हिन्दी](hi-Installation.md) | [العربية](ar-Installation.md) | [Português](pt-Installation.md) | [বাংলা](bn-Installation.md) | [Русский](ru-Installation.md) | [اردو](ur-Installation.md)
+
 ## Requisiti
 
 - Minecraft Java **26.3** oppure **26.4 Snapshot 7**, secondo il JAR scelto.

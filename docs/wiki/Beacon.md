@@ -1,5 +1,7 @@
 # Bonus del beacon
 
+Lingue: [Italiano](Beacon.md) | [English](en-Beacon.md) | [Español](es-Beacon.md) | [简体中文](zh-Beacon.md) | [हिन्दी](hi-Beacon.md) | [العربية](ar-Beacon.md) | [Português](pt-Beacon.md) | [বাংলা](bn-Beacon.md) | [Русский](ru-Beacon.md) | [اردو](ur-Beacon.md)
+
 Un beacon di livello massimo può concedere **Saturazione V** quando è attiva Rigenerazione.
 
 ## Attivazione
