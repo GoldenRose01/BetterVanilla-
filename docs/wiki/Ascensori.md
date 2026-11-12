@@ -1,5 +1,7 @@
 # Ascensori
 
+Lingue: [Italiano](Ascensori.md) | [English](en-Elevators.md) | [Español](es-Elevators.md) | [简体中文](zh-Elevators.md) | [हिन्दी](hi-Elevators.md) | [العربية](ar-Elevators.md) | [Português](pt-Elevators.md) | [বাংলা](bn-Elevators.md) | [Русский](ru-Elevators.md) | [اردو](ur-Elevators.md)
+
 Gli ascensori sono blocchi distinti con texture proprie nel namespace `elevators`. Un resource pack che modifica un blocco Vanilla non cambia l’aspetto dell’ascensore; può comunque sostituirne esplicitamente le texture dedicate.
 
 ## Uso
@@ -24,4 +26,4 @@ La scheda creativa **Elevators**, con l’ascensore di rame come icona, contiene
 
 Ogni variante è compatibile con le altre: non occorre abbinare il materiale alla destinazione.
 
-Per le ricette individuali consulta [Ricette](Ricette). Per dettagli su versioni e requisiti, vedi [Installazione](Installazione).
+Per le ricette individuali consulta [Ricette](Ricette.md). Per dettagli su versioni e requisiti, vedi [Installazione](Installazione.md).

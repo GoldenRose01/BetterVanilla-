@@ -8,4 +8,10 @@
     <AssemblyName>ModConfigurator</AssemblyName>
   </PropertyGroup>
   <ItemGroup><EmbeddedResource Include="../templates/**/*"><LogicalName>templates/%(RecursiveDir)%(Filename)%(Extension)</LogicalName></EmbeddedResource></ItemGroup>
+  <ItemGroup>
+    <Compile Include="../../../../Eldrich-Surge/external_tools/config-tool/src/ConfigForm.Catalog.cs" Link="Legacy/ConfigForm.Catalog.cs" />
+    <Compile Include="../../../../Eldrich-Surge/external_tools/config-tool/src/ConfigModels.cs" Link="Legacy/ConfigModels.cs" />
+    <EmbeddedResource Include="../../../../Eldrich-Surge/external_tools/config-tool/mc_itemlist/*.png"><LogicalName>icons/%(Filename)%(Extension)</LogicalName></EmbeddedResource>
+    <EmbeddedResource Include="../catalog.json"><LogicalName>catalog.json</LogicalName></EmbeddedResource>
+  </ItemGroup>
 </Project>

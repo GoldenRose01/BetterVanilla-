@@ -2,4 +2,5 @@ src/bin/
 src/obj/
 publish/
 templates/
+catalog.json
 *.bak-*

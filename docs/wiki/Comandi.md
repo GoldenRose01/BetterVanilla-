@@ -1,5 +1,7 @@
 # Comandi
 
+Lingue: [Italiano](Comandi.md) | [English](en-Commands.md) | [Español](es-Commands.md) | [简体中文](zh-Commands.md) | [हिन्दी](hi-Commands.md) | [العربية](ar-Commands.md) | [Português](pt-Commands.md) | [বাংলা](bn-Commands.md) | [Русский](ru-Commands.md) | [اردو](ur-Commands.md)
+
 I comandi `/gameset` richiedono il permesso amministrativo `COMMANDS_GAMEMASTER` di Minecraft. Il giocatore selezionato per KeepInventory deve essere online.
 
 ## KeepInventory individuale

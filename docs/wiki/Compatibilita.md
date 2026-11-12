@@ -1,5 +1,7 @@
 # Compatibilità
 
+Lingue: [Italiano](Compatibilita.md) | [English](en-Compatibility.md) | [Español](es-Compatibility.md) | [简体中文](zh-Compatibility.md) | [हिन्दी](hi-Compatibility.md) | [العربية](ar-Compatibility.md) | [Português](pt-Compatibility.md) | [বাংলা](bn-Compatibility.md) | [Русский](ru-Compatibility.md) | [اردو](ur-Compatibility.md)
+
 | Componente | Requisito |
 |---|---|
 | Minecraft Java | 26.3 oppure 26.4 Snapshot 7 |

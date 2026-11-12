@@ -1,14 +1,16 @@
 ![BetterVanilla+ — Funzioni vanilla, con qualcosa in più](assets/banner.svg)
 
+Lingue: [Italiano](Home.md) | [English](en-Home.md) | [Español](es-Home.md) | [简体中文](zh-Home.md) | [हिन्दी](hi-Home.md) | [العربية](ar-Home.md) | [Português](pt-Home.md) | [বাংলা](bn-Home.md) | [Русский](ru-Home.md) | [اردو](ur-Home.md)
+
 **Minecraft 26.3 · 26.4 Snapshot 7 · Fabric · BetterVanilla+ 1.1.0**
 
 Una raccolta di funzioni ispirate a Vanilla: ascensori costruibili, interazioni con calderoni e beacon e strumenti amministrativi per giocatori e villager.
 
 | 🧱 Costruisci e gioca | ⚙️ Gestisci il mondo |
 |---|---|
-| [Ascensori](Ascensori) · [Ricette](Ricette) | [Comandi](Comandi) |
-| [Calderoni](Calderoni) · [Beacon](Beacon) | [Installazione](Installazione) |
-| [Versione 1.1.0](Versione-1.1.0) · [Problemi frequenti](FAQ) | [Compatibilità](Compatibilita) |
+| [Ascensori](Ascensori.md) · [Ricette](Ricette.md) | [Comandi](Comandi.md) |
+| [Calderoni](Calderoni.md) · [Beacon](Beacon.md) | [Installazione](Installazione.md) |
+| [Versione 1.1.0](Versione-1.1.0.md) · [Problemi frequenti](FAQ.md) | [Compatibilità](Compatibilita.md) |
 
 ## Inizia in tre passi
 
@@ -23,8 +25,8 @@ Una raccolta di funzioni ispirate a Vanilla: ascensori costruibili, interazioni 
 - **Beacon:** una mela d’oro su un beacon di livello massimo con Rigenerazione concede Saturazione V ai giocatori vicini.
 - **Strumenti di gestione:** KeepInventory individuale e un editor interattivo degli scambi del villager più vicino.
 
-I dettagli pratici, le condizioni e i limiti sono descritti nelle pagine tematiche qui sopra. La [versione 1.1.0](Versione-1.1.0) è disponibile per Minecraft 26.3 e per 26.4 Snapshot 7.
+I dettagli pratici, le condizioni e i limiti sono descritti nelle pagine tematiche qui sopra. La [versione 1.1.0](Versione-1.1.0.md) è disponibile per Minecraft 26.3 e per 26.4 Snapshot 7.
 
 ---
 
-[Repository](https://github.com/GoldenRose01/BetterVanilla-) · [Segnala un problema](https://github.com/GoldenRose01/BetterVanilla-/issues) · [Note versione 1.1.0](Versione-1.1.0)
+[Repository](https://github.com/GoldenRose01/BetterVanilla-) · [Segnala un problema](https://github.com/GoldenRose01/BetterVanilla-/issues) · [Note versione 1.1.0](Versione-1.1.0.md)

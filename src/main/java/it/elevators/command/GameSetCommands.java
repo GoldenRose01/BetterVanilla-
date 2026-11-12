@@ -1,6 +1,8 @@
 package it.elevators.command;
 
 import com.mojang.brigadier.CommandDispatcher;
+import it.elevators.BetterVanillaConfig;
+import it.elevators.tree.TreeCutMode;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.Commands;
@@ -29,7 +31,20 @@ public final class GameSetCommands {
                                 .then(setKeepInventoryBranch("on", true))
                                 .then(setKeepInventoryBranch("off", false))))
                 .then(Commands.literal("villagertrade")
-                        .executes(context -> openVillagerTrade(context.getSource()))));
+                        .executes(context -> openVillagerTrade(context.getSource())))
+                .then(Commands.literal("treecut")
+                        .then(Commands.literal("off")
+                                .executes(context -> setTreeCut(context.getSource(), TreeCutMode.OFF)))
+                        .then(Commands.literal("fell")
+                                .executes(context -> setTreeCut(context.getSource(), TreeCutMode.FELL)))
+                        .then(Commands.literal("chop")
+                                .executes(context -> setTreeCut(context.getSource(), TreeCutMode.CHOP)))));
+    }
+
+    private static int setTreeCut(CommandSourceStack source, TreeCutMode mode) {
+        BetterVanillaConfig.setTreeCutMode(mode);
+        source.sendSuccess(() -> Component.literal("TreeCut mode impostato su: " + mode.getId() + "."), true);
+        return 1;
     }
 
     private static com.mojang.brigadier.builder.LiteralArgumentBuilder<CommandSourceStack>

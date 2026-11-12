@@ -4,6 +4,8 @@ A Fabric mod for Minecraft Java 26.3, organized around separate vanilla-style fe
 
 📚 **[Wiki del progetto](docs/wiki/Home.md)** — installazione, ascensori, ricette, calderoni, beacon e comandi.
 
+**[Wiki multilingue / Multilingual wiki](docs/wiki/Languages.md)** — [Italiano](docs/wiki/Home.md) · [English](docs/wiki/en-Home.md) · [Español](docs/wiki/es-Home.md) · [简体中文](docs/wiki/zh-Home.md) · [हिन्दी](docs/wiki/hi-Home.md) · [العربية](docs/wiki/ar-Home.md) · [Português](docs/wiki/pt-Home.md) · [বাংলা](docs/wiki/bn-Home.md) · [Русский](docs/wiki/ru-Home.md) · [اردو](docs/wiki/ur-Home.md)
+
 ## Elevators
 
 Adds elevator blocks based on the existing vanilla wool colors and selected chiseled blocks. Each elevator can connect vertically to any elevator variant. Elevator textures and cube models use the mod's own `elevators` namespace, so resource packs that change vanilla blocks do not alter elevator appearance. Resource packs can still override elevator assets explicitly.

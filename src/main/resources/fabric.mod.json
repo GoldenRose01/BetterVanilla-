@@ -15,6 +15,9 @@
 		],
 		"client": [
 			"it.elevators.ElevatorsClient"
+		],
+		"modmenu": [
+			"it.elevators.client.BetterVanillaModMenuIntegration"
 		]
 	},
 	"mixins": [
