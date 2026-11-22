@@ -1,0 +1,14 @@
+id = "elevators"
+name = "BetterVanilla+ — Elevators"
+version = "1.1.0-alpha.1"
+description = "Vertical elevators for Horizon 26.3."
+license = "CC0-1.0"
+homepage = "https://github.com/GoldenRose01/BetterVanilla-"
+issues = "https://github.com/GoldenRose01/BetterVanilla-/issues"
+api = "0.2"
+side = "both"
+capabilities = ["registries"]
+
+[wasm]
+sha512 = "91846a9852da37a32fc650f92d10d0356794cb02f0816437f95ef141132f80a23e33e801ba66c49406a2f96b5a24197a0d5b2189bbeb47f89f29b37aa00141a2"
+toolchain = "1.99.1 58cf8f9c35b355199727627d07ae34a4e2846d67"
