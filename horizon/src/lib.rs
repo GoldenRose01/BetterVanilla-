@@ -1,6 +1,14 @@
+mod beacon;
+mod cauldron;
+mod commands;
+mod keepinventory;
+mod treecut;
+
 use mod_api::{
-    Flow, Hand, Hooks, HostSide, InteractionResult, PlayerLoggedOutEvent,
-    RightClickBlockEvent, ServerHost, SoundSource, Text,
+    BreakBlockEvent, EntityTickListenedEvent, EntityTickPostEvent, Flow, Hand, Hooks,
+    HostSide, InteractionResult, LivingDeathEvent, LivingDropsEvent, PlayerLoggedOutEvent,
+    PlayerRespawnedEvent, RegisterCommandsEvent, RightClickBlockEvent, RunModCommandEvent,
+    ServerHost, SoundSource, Text,
 };
 use std::collections::HashMap;
 use std::sync::Mutex;
@@ -12,10 +20,62 @@ const COOLDOWN_TICKS: i64 = 8;
 #[derive(Default)]
 struct Elevators {
     last_use: Mutex<HashMap<u128, i64>>,
+    beacon: beacon::BeaconState,
+    treecut: treecut::TreeFellerState,
+    keepinv: keepinventory::KeepInventoryState,
 }
 
 #[mod_api::horizon_mod]
 impl Hooks for Elevators {
+    fn register_commands(&self, _: &mut dyn ServerHost, event: &mut RegisterCommandsEvent<'_>) {
+        commands::register(event);
+    }
+
+    fn run_mod_command(
+        &self,
+        host: &mut dyn ServerHost,
+        event: &mut RunModCommandEvent<'_>,
+    ) -> Flow {
+        let Some(msg) = commands::handle(host, event, &self.treecut, &self.keepinv) else {
+            return Flow::Continue;
+        };
+        let _ = host.commands().feedback(Text::literal(msg));
+        Flow::Cancel
+    }
+
+    fn entity_tick_listened(&self, _: &mut dyn ServerHost, event: &mut EntityTickListenedEvent) {
+        event.listened = true;
+    }
+
+    fn entity_tick_post(&self, host: &mut dyn ServerHost, event: &mut EntityTickPostEvent<'_>) {
+        if event.kind != "minecraft:item" {
+            return;
+        }
+        let Some(entity) = host.entity(event.entity) else {
+            return;
+        };
+        cauldron::try_convert(host, entity);
+        self.beacon.try_activate(host, event.entity, entity);
+    }
+
+    fn break_block(&self, host: &mut dyn ServerHost, event: &mut BreakBlockEvent<'_>) -> Flow {
+        self.treecut.on_break_block(host, event.pos, event.state)
+    }
+
+    fn living_death(&self, host: &mut dyn ServerHost, event: &mut LivingDeathEvent<'_>) -> Flow {
+        self.keepinv.on_living_death(host, event);
+        Flow::Continue
+    }
+
+    fn living_drops(&self, host: &mut dyn ServerHost, event: &mut LivingDropsEvent<'_>) -> Flow {
+        self.keepinv.on_living_drops(host, event);
+        Flow::Continue
+    }
+
+    fn player_respawned(&self, host: &mut dyn ServerHost, event: &mut PlayerRespawnedEvent<'_>) {
+        self.keepinv.on_player_respawned(host, event);
+    }
+
     fn right_click_block(&self, host: HostSide<'_>, event: &mut RightClickBlockEvent<'_>) -> Flow {
         let HostSide::Server(host) = host else {
             return Flow::Continue;
@@ -34,7 +94,8 @@ impl Hooks for Elevators {
             return Flow::Continue;
         };
         let is_elevator = |host: &dyn ServerHost, pos| {
-            level.block_state(host, pos)
+            level
+                .block_state(host, pos)
                 .and_then(|state| host.block_in_tag(state.block(), ELEVATOR_TAG))
                 == Some(true)
         };
@@ -43,16 +104,19 @@ impl Hooks for Elevators {
         }
 
         *event.cancellation_result = InteractionResult::Consume;
-        let (Some(now), Some((min_y, height))) =
-            (level.game_time(host), level.height(host))
+        let (Some(now), Some((min_y, height))) = (level.game_time(host), level.height(host))
         else {
             return Flow::Cancel;
         };
         {
-            let mut last_use = self.last_use.lock().expect("elevator cooldown lock poisoned");
-            if last_use.get(&click.player).is_some_and(|previous| {
-                (0..COOLDOWN_TICKS).contains(&(now - previous))
-            }) {
+            let mut last_use = self
+                .last_use
+                .lock()
+                .expect("elevator cooldown lock poisoned");
+            if last_use
+                .get(&click.player)
+                .is_some_and(|previous| (0..COOLDOWN_TICKS).contains(&(now - previous)))
+            {
                 return Flow::Cancel;
             }
             last_use.insert(click.player, now);
@@ -82,19 +146,31 @@ impl Hooks for Elevators {
             let _ = player.action_bar(host, line);
             return Flow::Cancel;
         }
-        if player.entity().teleport_to(host, [x + 0.5, floor, z + 0.5], None) {
+        if player
+            .entity()
+            .teleport_to(host, [x + 0.5, floor, z + 0.5], None)
+        {
             for (sound, volume) in [
                 ("minecraft:entity.enderman.teleport", 0.8),
                 ("minecraft:entity.shulker.teleport", 0.65),
             ] {
-                level.play_sound(host, sound, [x + 0.5, floor - 0.5, z + 0.5],
-                    SoundSource::Players, volume, 1.0);
+                level.play_sound(
+                    host,
+                    sound,
+                    [x + 0.5, floor - 0.5, z + 0.5],
+                    SoundSource::Players,
+                    volume,
+                    1.0,
+                );
             }
         }
         Flow::Cancel
     }
 
     fn player_logged_out(&self, _: &mut dyn ServerHost, event: &mut PlayerLoggedOutEvent<'_>) {
-        self.last_use.lock().expect("elevator cooldown lock poisoned").remove(&event.player);
+        self.last_use
+            .lock()
+            .expect("elevator cooldown lock poisoned")
+            .remove(&event.player);
     }
 }
